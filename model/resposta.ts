@@ -1,23 +1,39 @@
 export default class RespostaModel {
-    #valor: string
-    #certa: boolean
-    #revelada: boolean
+  #valor: string;
+  #certa: boolean;
+  #revelada: boolean;
 
-    constructor(valor: string, certa: boolean, revelada = false) {
-        this.#valor = valor
-        this.#certa = certa
-        this.#revelada = revelada
-    }
+  constructor(valor: string, certa: boolean, revelada = false) {
+    this.#valor = valor;
+    this.#certa = certa;
+    this.#revelada = revelada;
+  }
 
-    get valor() {
-        return this.#valor
-    }
+  static certa(valor: string) {
+    return new RespostaModel(valor, true);
+  }
 
-    get certa() {
-        return this.#certa
-    }
+  static errada(valor: string) {
+    return new RespostaModel(valor, false);
+  }
 
-    get revelada() {
-        return this.#revelada
-    }
+  get valor() {
+    return this.#valor;
+  }
+
+  get certa() {
+    return this.#certa;
+  }
+
+  get revelada() {
+    return this.#revelada;
+  }
+
+  converterParaObjeto() {
+    return {
+      valor: this.#valor,
+      certa: this.#certa,
+      revelada: this.#revelada,
+    };
+  }
 }
