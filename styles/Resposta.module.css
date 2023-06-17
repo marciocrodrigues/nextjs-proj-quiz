@@ -28,7 +28,26 @@
   background-color: #fff;
 }
 
-.verso {
+.verso > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border-radius: 12px;
+}
+
+.certa {
+  background-color: #2baa6d;
+}
+
+.errada {
+  background-color: #e44a4c;
+}
+
+.certa .valor,
+.errada .valor {
+  font-size: 1.5rem;
 }
 
 .letra {
@@ -41,6 +60,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-right: 20px;
+  color: #fff;
 }
 
 .valor {
